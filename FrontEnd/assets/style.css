@@ -369,6 +369,10 @@ footer nav ul {
 	color: #1D6154;
 }
 
+.hidden-content {
+	display: none;
+  }
+
 .modaladdworks {
 	display: none;
 	flex-direction: column;
@@ -409,6 +413,17 @@ footer nav ul {
 	margin-top: 60px;
     font-weight: bold;
     font-size: 1.5rem;
+}
+
+#modal-error {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	display:none; 
+	color:red;
+	margin-bottom: 30px;
+	position: relative;
+	top: -15px;
 }
 
 .modaladdworks form{
@@ -477,17 +492,6 @@ footer nav ul {
 	height: 100px;
 	width: 100%;
 	border-top: 1px solid gray;
-}
-
-.container-button-add-work .buttonvalidform{
-	background-color: #1d6154;
-	padding: 9px 50px;
-	border-radius: 25px;
-	color: white;
-	font-weight: 700;
-	font-size: 1rem;
-	font-family: Syne;
-	cursor: pointer;
 }
 
 .container-button-add-work .button-add-work{

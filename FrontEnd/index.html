@@ -15,7 +15,7 @@
 <body>
 	<div id="modalcontent">
 		<section class="containermodals">
-			<span><i class="fa-solid fa-xmark"></i></span>
+			<span><i class="fa-solid fa-xmark cross1"></i></span>
 			<h3>Galerie Photo</h3>
 			<div class="container-gallery-btn">
 				<div class="modalprojets">
@@ -27,8 +27,9 @@
 		</section>
 		<section class="modaladdworks">
 			<span class="arrow-left"><i class="fa-solid fa-arrow-left"></i></span>
-			<span class="xmark"><i class="fa-solid fa-xmark"></i></span>
+			<span class="xmark"><i class="fa-solid fa-xmark cross2"></i></span>
 			<h3>Ajout photo</h3>
+			<div id="modal-error"></div>
 			<form id="formaddworks">
 				<div class="containeraddphoto">
 					<i class="fa-regular fa-image"></i>
@@ -41,6 +42,10 @@
 				<input type="text" name="title" id="title" required>
 				<label for="categoryinput">Catégorie</label>
 				<select id="categoryinput" name="category" required>
+					<option></option>
+					<option value="1">Objets</option>
+					<option value="2">Appartements</option>
+					<option value="3">Hotels & restaurants</option>
 				</select>
 				<div class="container-button-add-work ">
 					<button type="submit" class="button-add-work">Valider</button>
