@@ -154,6 +154,8 @@ if (loged == "true") {
 
     logout.textContent = "logout";
 
+    filters.style.display = "none"
+
     logout.addEventListener("click", () => {
 
         window.sessionStorage.loged = false
@@ -348,6 +350,13 @@ function deleteWork() {
 
             .then((response) => {
 
+                if (response.ok) {
+
+                    displayProjets();
+                    displayWorksModal();
+                    window.location.reload();
+                }
+
                 if (!response.ok) {
 
                     console.log("Le delete n'a pas marché !");
@@ -431,6 +440,13 @@ formAddWorks.addEventListener("submit", function (e) {
 
     .then((response) => {
 
+        if (response.ok) {
+            
+            displayProjets();
+            displayWorksModal();
+            window.location.reload();
+        }
+
         if (!response.ok) {
 
             throw new Error("Échec de la création du projet:" + response.statusText);
@@ -460,8 +476,6 @@ function displaySelectedImage(event) {
 
     const newImage = document.createElement('img');
 
-    //console.log(containeraddphoto);
-
     containeraddphoto[0].appendChild(newImage);
 
     if (file) {
@@ -472,9 +486,8 @@ function displaySelectedImage(event) {
         reader.onload = function(e) {
 
 
-            const imgSrc = e.target.result; // Recupération de l'URL
+            const imgSrc = e.target.result; 
 
-            // Setting the src property of the previewImage element
 
             if (newImage) {
 
@@ -494,14 +507,12 @@ function displaySelectedImage(event) {
         };
 
 
-        reader.readAsDataURL(file); // Lecture du fichier en tant que Data URL
+        reader.readAsDataURL(file);
 
     }
 
 }
 
-
-// Assuming inputFile is the ID of your <input type="file"> element
 
 inputFile.addEventListener('change', displaySelectedImage);
 
